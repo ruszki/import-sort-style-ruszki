@@ -1,0 +1,16 @@
+{
+    "name": "import-sort-style-ruszki",
+    "version": "0.0.1",
+    "description": "import-sort style for using @app, and other paths with TypeScript",
+    "main": "lib/index.js",
+    "scripts": {
+        "build": "tsc -p ."
+    },
+    "author": "Gergo Vladiszavlyev <me@ruszki.com> (https://github.com/ruszki)",
+    "license": "MIT",
+    "devDependencies": {
+        "import-sort": "~5.0.0",
+        "tslint": "~5.10.0",
+        "typescript": "~2.9.2"
+    }
+}
