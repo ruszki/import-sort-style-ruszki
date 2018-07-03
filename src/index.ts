@@ -32,6 +32,7 @@ export default function(styleApi: IStyleAPI): Array<IStyleItem> {
             sort: moduleName(unicode),
             sortNamedMembers: name(unicode),
         },
+
         {separator: true},
 
         // import any from "@app/any";
@@ -40,6 +41,7 @@ export default function(styleApi: IStyleAPI): Array<IStyleItem> {
             sort: moduleName(unicode),
             sortNamedMembers: name(unicode),
         },
+
         {separator: true},
 
         // import any from "@img/any";
@@ -48,19 +50,21 @@ export default function(styleApi: IStyleAPI): Array<IStyleItem> {
             sort: moduleName(unicode),
             sortNamedMembers: name(unicode),
         },
-        {separator: true},
 
-        // import any from "../any";
-        {
-            match: and(isRelativeModule, moduleName(startsWith("../"))),
-            sort: moduleName(unicode),
-            sortNamedMembers: name(unicode),
-        },
         {separator: true},
 
         // import any from "any";
         {
             match: isAbsoluteModule,
+            sort: moduleName(unicode),
+            sortNamedMembers: name(unicode),
+        },
+
+        {separator: true},
+
+        // import any from "../any";
+        {
+            match: and(isRelativeModule, moduleName(startsWith("../"))),
             sort: moduleName(unicode),
             sortNamedMembers: name(unicode),
         },

@@ -1,6 +1,6 @@
 {
     "name": "import-sort-style-ruszki",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "import-sort style for using @app, and other paths with TypeScript",
     "main": "lib/index.js",
     "scripts": {
