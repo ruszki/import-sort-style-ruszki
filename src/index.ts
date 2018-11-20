@@ -11,26 +11,28 @@ export default function(styleApi: IStyleAPI): Array<IStyleItem> {
         moduleName,
         name,
         startsWith,
-        unicode,
+        naturally,
     } = styleApi;
+	
+	const 
 
     return [
         // import "any"
         {
-            match: and(hasNoMember),
-            sort: moduleName(unicode),
+            match: hasNoMember,
+            sort: moduleName(naturally),
         },
 
         // import * as any from "any";
         {
             match: hasNamespaceMember,
-            sort: moduleName(unicode),
+            sort: moduleName(naturally),
         },
         // import * as any from "./any";
         {
             match: and(isRelativeModule, moduleName(startsWith("./"))),
-            sort: moduleName(unicode),
-            sortNamedMembers: name(unicode),
+            sort: moduleName(naturally),
+            sortNamedMembers: name(naturally),
         },
 
         {separator: true},
@@ -38,8 +40,8 @@ export default function(styleApi: IStyleAPI): Array<IStyleItem> {
         // import any from "@app/any";
         {
             match: moduleName(startsWith("@app/")),
-            sort: moduleName(unicode),
-            sortNamedMembers: name(unicode),
+            sort: moduleName(naturally),
+            sortNamedMembers: name(naturally),
         },
 
         {separator: true},
@@ -47,8 +49,8 @@ export default function(styleApi: IStyleAPI): Array<IStyleItem> {
         // import any from "@img/any";
         {
             match: moduleName(startsWith("@img/")),
-            sort: moduleName(unicode),
-            sortNamedMembers: name(unicode),
+            sort: moduleName(naturally),
+            sortNamedMembers: name(naturally),
         },
 
         {separator: true},
@@ -56,8 +58,8 @@ export default function(styleApi: IStyleAPI): Array<IStyleItem> {
         // import any from "any";
         {
             match: isAbsoluteModule,
-            sort: moduleName(unicode),
-            sortNamedMembers: name(unicode),
+            sort: moduleName(naturally),
+            sortNamedMembers: name(naturally),
         },
 
         {separator: true},
@@ -65,8 +67,8 @@ export default function(styleApi: IStyleAPI): Array<IStyleItem> {
         // import any from "../any";
         {
             match: and(isRelativeModule, moduleName(startsWith("../"))),
-            sort: moduleName(unicode),
-            sortNamedMembers: name(unicode),
+            sort: moduleName(naturally),
+            sortNamedMembers: name(naturally),
         },
 
         {separator: true},
